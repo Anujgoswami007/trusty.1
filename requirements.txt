@@ -1,7 +1,0 @@
-Flask
-python-dotenv
-rank-bm25
-sentence-transformers
-transformers
-pinecone-client
-google-generativeai
