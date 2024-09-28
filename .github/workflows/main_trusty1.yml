@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'trusty1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4CBA283E18D44F79BF9D5AEA4FF143F2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_58F4DEBD8F3943AF904213D902F7C491 }}
