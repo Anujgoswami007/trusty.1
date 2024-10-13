@@ -17,11 +17,15 @@ load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 
+FLASK_DEBUG = 1
+PINECONE_API_KEY="1d8e304a-f268-4aa2-b6e3-21c2c634bfee"
+GOOGLE_AI_API_KEY="AIzaSyBBco-KQ3V4QsocFHhPKHF_5kchVRzIoFU"
+
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
 # Initialize Pinecone
-api_key = os.getenv("PINECONE_API_KEY")
+api_key = PINECONE_API_KEY
 pc = Pinecone(api_key=api_key)
 index_name = "hybrid-search-langchain-pinecone-5"
 index = pc.Index(index_name)
@@ -32,7 +36,7 @@ embedding_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
 tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2", clean_up_tokenization_spaces=True)
 
 # Initialize Google AI
-genai.configure(api_key=os.getenv("GOOGLE_AI_API_KEY"))
+genai.configure(api_key=GOOGLE_AI_API_KEY)
 
 # Custom synonyms dictionary
 custom_synonyms = {
